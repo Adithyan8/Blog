@@ -121,11 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_URL = '/static/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')   #where images are saved. profile_pics saved inside the media directory
-
 MEDIA_URL='/media/'  # access image in the browser
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #by default it uses bootstrap 2
