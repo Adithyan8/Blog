@@ -1,0 +1,22 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <img class="rounded-circle post-img " src="{{object.author.profile.image.url}}" class="align-self-center mr-3" alt="{{user.username}}">
+                <a href="{% url 'blog:user-posts' object.author.username %}"><strong >{{object.author}} </strong></a>
+                <small class="float-right"><em>{{object.date_posted|date:"d F,Y"}}</em></small>
+            </div>
+            <div class="card-text">
+                <h4>{{object.title}}</h4>
+                <p>{{object.content}}</p>  
+                <hr>
+                {% if object.author == user %}
+                    <a class="btn btn-outline-secondary btn-sm mt-1 mb-1" href="{% url 'blog:post-update' object.id %}">Update</a>
+                    <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'blog:post-delete' object.id %}">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <br>
+{%endblock content%}

@@ -1,0 +1,63 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+    {%for post in posts%}
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <img class="rounded-circle post-img" src="{{post.author.profile.image.url}}" class="align-self-center mr-3" alt="{{user.username}}">
+                    <strong><a class="mr-2" href="{% url 'blog:user-posts' post.author.username %}">{{ post.author }}</a></strong>
+                    <small class="float-right"><em>{{post.date_posted|date:"d F,Y"}}</em></small>
+                    <hr>
+                </div>
+                <div class="card-text">
+                    <h4><a href="{% url 'blog:post-detail' post.id %}">{{post.title}}</a></h4>
+                    <p>{{post.content}}</p>  
+                </div>
+            </div>
+        </div>
+        <br>
+    {%endfor%}
+
+    <!-- For more paging techniques check corey schafer -->
+
+    {% if is_paginated %}
+        <div class='container' style="text-align:center;">
+            {% if page_obj.has_previous%}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-sm">
+                        <li class="page-item">
+                            <a class="page-link" href="/?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo; Previous</span>
+                            </a>
+                        </li>
+                    </ul>    
+                    <ul class="pagination pagination-sm">
+                        <li class="page-item">
+                            <a class="page-link" href="/?page=1" aria-label="Previous">
+                                <span aria-hidden="true">First Page</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            {%endif%}
+            {% if page_obj.has_next%}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-sm justify-content-end">
+                        <li class="page-item">
+                        <a class="page-link" href="/?page={{page_obj.paginator.num_pages}}" aria-label="Next">
+                            <span aria-hidden="true">Next &raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                    <ul class="pagination pagination-sm justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" href="/?page={{page_obj.paginator.num_pages}}" aria-label="Previous">
+                                <span aria-hidden="true">Last Page</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            {%endif%}
+        </div>    
+    {% endif %}
+{%endblock content%}
