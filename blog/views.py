@@ -10,14 +10,6 @@ from django.views.generic import (
 from .models import Post
 # Create your views here.   
 
-'''def home_view(request):
-    obj = Post.objects.all()
-    context = {
-        'title':'home',
-        'posts':obj
-    }
-    return render(request,'blog/home.html',context)'''
-
 class PostListView(ListView):
     model = Post
     template_name='blog/home.html'
@@ -70,8 +62,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
-    
-
-def about_view(request):
-    context={'title':'about'}
-    return render(request,'blog/about.html',context)

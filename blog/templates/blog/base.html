@@ -25,9 +25,6 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{%url 'blog:blog-home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{%url 'blog:blog-about' %}">About <span class="sr-only">(current)</span></a>
-            </li>
             </ul>
             <ul class="navbar-nav ml-auto">
             
@@ -72,21 +69,7 @@
                     {% endfor %}
                 {% endif %}
                 {%block content%}{%endblock%}
-            </div>    
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Our Sidebar</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">You can put any information here you like</h6>
-                        <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action">Latest Posts</button>
-                            <button type="button" class="list-group-item list-group-item-action">Announcements</button>
-                            <button type="button" class="list-group-item list-group-item-action">Calenders</button>
-                            <button type="button" class="list-group-item list-group-item-action">etc.</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
+            </div>        
         </div>        
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
