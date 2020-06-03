@@ -128,7 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')   #where images are saved. profile_pics saved inside the media directory
-MEDIA_URL='/'  # access image in the browser
+MEDIA_URL='/media/'  # access image in the browser
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #by default it uses bootstrap 2
 
