@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '#5ngo7_8=q08!mm1k&hnb_6(*dx&%2=_ep-lpp3u3#j-*e$7(-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,7 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')   #where images are saved. profile_pics saved inside the media directory
-MEDIA_URL='/media/'  # access image in the browser
+MEDIA_URL='/'  # access image in the browser
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #by default it uses bootstrap 2
 
