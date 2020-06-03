@@ -127,14 +127,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')   #where images are saved. profile_pics saved inside the media directory
-MEDIA_URL='/media/'  # access image in the browser
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #by default it uses bootstrap 2
 
 LOGIN_REDIRECT_URL = 'blog:blog-home'
 LOGIN_URL = 'login'
 
 django_heroku.settings(locals())
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')   #where images are saved. profile_pics saved inside the media directory
+MEDIA_URL='/media/'  # access image in the browser
 
 
